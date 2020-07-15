@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h2 user page
+
+  if (users && users.length)
+    table
+        thead
+            th Id
+            th Name
+        tbody
+            //If there is articles, create a row and column for each article
+            each Article in users
+                tr
+                    td= Article._id
+                    td(style="text-align: center")= Article.username 
+
+  else
+    h1 No Data!
